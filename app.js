@@ -25,12 +25,20 @@ form.addEventListener(`submit`, () => {
 // Bonus
 // 4a. Select the Dark Mode button and set it to a const variable called darkMode
 const darkMode = document.querySelector(`#dm`)
-
+console.dir(darkMode)
+console.log(darkMode.innerText)
 // 4b. Using addEventListener, TOGGLE the "dark-mode" CSS class On/Off for EVERY element when the Dark Mode Button is clicked (HINT: You will need to use the asterisk "*" selector as well as a loop)
 darkMode.addEventListener(`click`, () => {
     const testing = document.querySelectorAll(`*`);
 for (el of testing) {
     el.classList.toggle(`dark-mode`)
+
+    if (darkMode.innerText == `DARK MODE`) {
+        darkMode.innerText = `LIGHT MODE`;
+        console.log(darkMode.innerText)
+    } else if (darkMode.innerText == `LIGHT MODE`) {
+        darkMode.innerText = `DARK MODE`;
+    }
 }
 })
 
